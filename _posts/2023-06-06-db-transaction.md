@@ -13,15 +13,15 @@ description: description is empty
 기본적으로 Transaction 정합성을 위해서 사용되고, Lock 은 동시성을 위해서 사용된다.  
 트랜잭션은 데이터베이스에서 하나의 논리적 기능을 수행하기 위한 작업의 단위를 말하며 데이터베이스에 접근하는 방법은 쿼리이므로, 즉 여러 개의 쿼리들을 하나로 묶는 단위를 말한다.  
 기본적으로 A.C.I.D 속성을 가지고 있어야 한다.
-    - Atomic (원자성) - 관련된 일이 모두 수행되거나 수행되지 않았음을 보장.
-    - Consitency (일관성) - 허용된 방식으로 데이터를 변경해야한다는 것. 즉 특정한 방식을 통해서만 조작되어야 한다.
-    - Isolation (격리성) - 트랜잭션 수행 시 서로 끼어들지 못한다는 것.
-    - Durability (지속성) - 성공적으로 반영된 트랜잭션은 영원히 반영되어야한다는 것.
+- Atomic (원자성) - 관련된 일이 모두 수행되거나 수행되지 않았음을 보장.
+- Consitency (일관성) - 허용된 방식으로 데이터를 변경해야한다는 것. 즉 특정한 방식을 통해서만 조작되어야 한다.
+- Isolation (격리성) - 트랜잭션 수행 시 서로 끼어들지 못한다는 것.
+- Durability (지속성) - 성공적으로 반영된 트랜잭션은 영원히 반영되어야한다는 것.
 ISOLATION LEVEL 은 다음과 같이 네 종류로 나뉜다.
-    1. READ UNCOMMITTED
-    2. READ COMMITTED
-    3. REPEATABLE READ
-    4. TRANSACTIONAL
+1. READ UNCOMMITTED
+2. READ COMMITTED
+3. REPEATABLE READ
+4. TRANSACTIONAL
 
 
 |                  | DIRTY READ | NON REPEATABLE READ | PAHNTOM READ |
@@ -32,7 +32,7 @@ ISOLATION LEVEL 은 다음과 같이 네 종류로 나뉜다.
 | TRANSACTIONAL    | NO         | NO                  | YES          |
 
 ### READ UNCOMMITTED - DIRTY READ
-**더티 리드 ( DIRTY READ )** - 한 트랜잭션이 수행중일 때 다른 트랜잭션이 Commit 하지 않은 값을 읽을 수 있다는 것.
+**더티 리드 ( DIRTY READ )** - 한 트랜잭션이 수행중일 때 다른 트랜잭션이 Commit 하지 않은 값을 읽을 수 있다는 것.  
 **반복 가능하지 않은 조회 ( NON-REPEATABLE READ )** - **한 트랜잭션 내의 같은 행에 두 번 이상 조회했는데 그 값이 다른 경우**.
 
 |   | Transaction A                                     | Transaction B                                     |
